@@ -6,7 +6,7 @@ mongoClient.connect(url, function(err, database) {
 
     var dbo = database.db('mydb');
 
-    dbo.collection('customers').find({}).toArray(function(err, results) {
+    dbo.collection('customers').find({name: '/^S/'}).toArray(function(err, results) {
         if (err) throw err;
 
         console.log(results);
